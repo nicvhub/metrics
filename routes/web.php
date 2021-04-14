@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,3 +21,6 @@ Route::get('/', function () {
 Route::post('/signin', [App\Http\Controllers\LoginController::class, 'authenticate']);
 
 Route::post('/logout', [App\Http\Controllers\LoginController::class, 'logout']);
+
+Route::middleware('auth:sanctum')->get('/signin',
+    [App\Http\Controllers\LoginController::class, 'check']);

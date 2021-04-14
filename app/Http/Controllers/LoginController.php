@@ -17,10 +17,9 @@ class LoginController extends Controller
     {
         $credentials = $request->only('email', 'password');
 
-
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return response(null,200);
+            return response(null,204);
         }
         return response(null,401);
     }
@@ -40,5 +39,10 @@ class LoginController extends Controller
         $request->session()->regenerateToken();
 
         return redirect('/');
+    }
+
+    public function check(Request $request)
+    {
+        return response(null,204);
     }
 }
