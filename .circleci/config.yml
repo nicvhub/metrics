@@ -17,7 +17,7 @@ workflows:
             branches:
                 only: main # only run deploy-via-git job on main
           post-steps:
-            - run: heroku -a nameless-thicket-31094 run php artisan migrate --seed
+            - run: heroku run -a nameless-thicket-31094 php artisan migrate --seed
 jobs:
 
   build:
