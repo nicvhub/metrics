@@ -21,8 +21,8 @@ jobs:
   heroku-migrations:
     steps:
       - run:
-        name: "Migrate and seed"
-        command: heroku run php artisan migrate --seed
+          name: "Migrate and seed"
+          command: heroku run php artisan migrate --seed
   build:
     docker:
       # Specify the version you desire here
