@@ -16,7 +16,7 @@ workflows:
           filters:
             branches:
                 only: main # only run deploy-via-git job on main
-      - heroku-migrations
+        - heroku-migrations
 jobs:
   heroku-migrations:
     steps:
