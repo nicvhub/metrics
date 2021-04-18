@@ -57,10 +57,6 @@ jobs:
           name: "Generate App key"
           command: php artisan key:generate
 
-      - run:
-          name: "Migrate and seed"
-          command: php artisan migrate --seed
-
       # run tests via artisan verbose mode
       - run:
           name: "Run Unit Tests"
