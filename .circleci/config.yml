@@ -16,13 +16,11 @@ workflows:
           filters:
             branches:
                 only: main # only run deploy-via-git job on main
-        - heroku-migrations
+      - heroku-migrations:
+          - run:
+              name: "Migrate and seed"
+              command: heroku run php artisan migrate --seed
 jobs:
-  heroku-migrations:
-    steps:
-      - run:
-          name: "Migrate and seed"
-          command: heroku run php artisan migrate --seed
   build:
     docker:
       # Specify the version you desire here
